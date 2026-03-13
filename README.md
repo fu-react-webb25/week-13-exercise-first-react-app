@@ -168,3 +168,123 @@ export default App;
 ```
 
 5. Kontrollera i webbläsaren att komponenten visas.
+
+---
+
+## Steg 6: Listor i React
+
+1. Lägg till följande kod i FavoriteList:
+
+```
+const favorites = ['fotboll', 'tv-spel', 'golf', 'film', 'mat']
+```
+
+2. Rendera ut varje favorit i listan med .map():
+
+```
+<ul>
+  {favorites.map((fav, index) => (
+    <li key={index}>{fav}</li>
+  ))}
+</ul>
+```
+
+3. Kontrollera att listan visas i webbläsaren.
+
+React kräver att varje element i en lista har en key.
+Den hjälper React att förstå vilka element som förändras när sidan uppdateras.
+
+---
+
+## Steg 7: Conditional Rendering
+
+1. Ersätt din tidigare array med:
+
+```
+const favs = [
+  { name: 'fotboll', isCool: false },
+  { name: 'tv-spel', isCool: true },
+  { name: 'golf', isCool: true },
+  { name: 'film', isCool: false },
+  { name: 'mat', isCool: true }
+];
+```
+
+2. Rendera nu listan igen:
+
+```
+<ul>
+  {favs.map((fav, index) => (
+    <li key={index}>
+      Det är {fav.isCool ? '' : 'inte'} coolt med {fav.name}
+    </li>
+  ))}
+</ul>
+```
+
+Här använder vi en ternary operator.
+
+Syntaxen ser ut så här:
+
+```
+villkor ? omSant : omFalskt
+```
+
+Det fungerar ungefär som en kortare version av en if-else-sats.
+
+---
+
+## Steg 8: Props
+
+Nu ska vi förbättra strukturen i vår kod.
+
+Istället för att skapa varje <li> direkt i FavoriteList, ska vi skapa en ny komponent.
+
+1. Skapa filen `FavoriteItem.jsx`
+
+2. Skapa komponenten:
+
+```
+function FavoriteItem({ fav }) {
+
+  return (
+    <li>
+      Det är {fav.isCool ? '' : 'inte'} coolt med {fav.name}
+    </li>
+  )
+}
+
+export default FavoriteItem;
+```
+
+3. Importera din nya komponent längst upp i `FavoriteList.jsx`
+
+```
+import FavoriteItem from './FavoriteItem'
+```
+
+4. Rendera den så här:
+
+```
+<ul>
+  {favs.map((fav, index) => (
+    <FavoriteItem key={index} fav={fav} />
+  ))}
+</ul>
+```
+
+Nu skickar vi data från en komponent till en annan med hjälp av props.
+
+Detta är ett av de allra viktigaste koncepten i React.
+
+## Klart!
+
+Du har nu lärt dig att:
+* skapa en React-app
+* arbeta med komponenter
+* använda JSX
+* rendera listor
+* använda conditional rendering
+* skicka data mellan komponenter med props
+
+Dessa koncept är grunden i nästan alla React-applikationer.
