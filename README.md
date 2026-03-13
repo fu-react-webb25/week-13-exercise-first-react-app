@@ -237,7 +237,7 @@ Det fungerar ungefär som en kortare version av en if-else-sats.
 
 Nu ska vi förbättra strukturen i vår kod.
 
-Istället för att skapa varje <li> direkt i FavoriteList, ska vi skapa en ny komponent.
+Istället för att skriva ut varje listelement direkt i FavoriteList, ska vi nu skapa en ny komponent som renderar ut den informationen.
 
 1. Skapa filen `FavoriteItem.jsx`
 
