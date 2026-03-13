@@ -128,7 +128,7 @@ Om du ser texten fungerar din React-app. Testa att byta text, spara och se om ä
 ## Steg 5: Skapa din första komponent
 
 1. Skapa nu en ny mapp i src som heter `components`.
-2. Skapa sedan filen `FavoriteList.jsx` i `components-mappen`.
+2. Skapa sedan filen `FavoriteList.jsx` i components-mappen.
 3. Klistra in följande kod i filen:
 
 ```
@@ -145,13 +145,13 @@ function FavoriteList() {
 export default FavoriteList;
 ```
 
-3. Importera din nya komponent längst upp i `App.jsx`:
+4. Importera din nya komponent längst upp i `App.jsx`:
 
 ```
 import FavoriteList from './components/FavoriteList'
 ```
 
-4. Rendera komponenten:
+5. Rendera komponenten:
 
 ```
 function App() {
@@ -166,13 +166,13 @@ function App() {
 export default App;
 ```
 
-5. Kontrollera i webbläsaren att komponenten visas.
+6. Kontrollera i webbläsaren att komponenten visas.
 
 ---
 
 ## Steg 6: Listor i React
 
-1. Lägg till följande kod i FavoriteList:
+1. Lägg till följande kod ovanför ditt return-statement i FavoriteList:
 
 ```
 const favorites = ['fotboll', 'tv-spel', 'golf', 'film', 'mat']
